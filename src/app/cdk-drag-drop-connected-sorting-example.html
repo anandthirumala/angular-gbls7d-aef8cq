@@ -1,0 +1,66 @@
+<h2>To do</h2>
+
+<div cdkDropList (cdkDropListDropped)="drop($event)">
+	<table class="table">
+		<thead class="thead-dark">
+			<tr>
+				<th scope="col">A</th>
+				<th scope="col">
+					B
+				</th>
+				<th scope="col">
+					C
+				</th>
+				<th class="asc" scope="col">
+					D
+				</th>
+				<th class="asc" scope="col">E</th>
+				<th class="asc" scope="col">F</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let feed of todo;let index = index" cdkDrag (cdkDragStarted)="started($event)">
+				<!-- <span *cdkDragPreview>
+
+                      {{feed.name}}
+                      {{feed.num}}
+                     {{feed.char}}
+                     {{feed.length}}
+                     {{feed.difficulty}}
+            <select id="cars" [(ngModel)]="feed.selected" >
+              <option *ngFor="let car of cars">{{car}}</option>
+            </select>
+          </span> -->
+				<td class="feed-col">
+					{{feed.name}}
+				</td>
+				<td class="feed-col">
+					{{feed.num}}
+				</td>
+				<td class="feed-col">
+					{{feed.char}}
+				</td>
+				<td class="feed-col">
+					{{feed.length}}
+
+				</td>
+				<td class="feed-col">
+					{{feed.difficulty}}
+
+				</td>
+				<td class="feed-col">
+					<select id="cars" [(ngModel)]="feed.selected" >
+                                    <option>None</option>
+            <option *ngFor="let car of cars">{{car}}</option>
+          </select>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+
+
+<!-- Copyright 2019 Google LLC. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at http://angular.io/license -->
